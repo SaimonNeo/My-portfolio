@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="logo">Portfolio</div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Mohammad Saymon</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#hobbies" onclick="toggleMenu()">Hobbies</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Mohammad Saymon</h1>
+        <p class="section__text__p2">Student of Premier University</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/resume-example.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='#contact'">
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon1"
+            onclick="location.href='https://linkedin.com/in/mohammad-saymon/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon1"
+            onclick="location.href='https://github.com/mohammadsaymon'"
+          />
+        </div>
+      </div>
+      <div class="section__pic-container">
+        <img src="./assets/profile-pic.png" alt="Mohammad Saymon profile picture" />
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./assets/about-pic.png"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="text-container">
+            <p>
+              Hello, I'm Mohammad Saymon, a passionate Frontend Developer with experience in creating responsive and user-friendly websites. I am currently studying Computer Science at Premier University, where I am honing my skills in both Frontend and Backend Development. In my spare time, I love to explore new technologies, contribute to open-source projects, and learn about design patterns and best practices.
+            </p>
+          </div>
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/experience.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <p>1+ years <br />Frontend Development</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>B.Sc. Bachelors Degree in Computer Science</p>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='#experience'"
+      />
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Experience</h1>
+      <div class="experience-details-container">
+        <div class="details-container">
+          <h2 class="experience-sub-title">Frontend Development</h2>
+          <div class="article-container">
+            <article>
+              <img
+                src="./assets/html.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <div>
+                <h3>HTML</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img
+                src="./assets/css.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <div>
+                <h3>CSS</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            <article>
+              <img
+                src="./assets/icons8-javascript-500.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <div>
+                <h3>JavaScript</h3>
+                <p>Intermediat</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='#projects'"
+      />
+    </section>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/portfolio.jpeg"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Portfolio Website</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/mohammadsaymon/portfolio-website'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://mohammadsaymon.github.io/portfolio-website/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-2.png"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Html Tag</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/mohammadsaymon/todo-app'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://mohammadsaymon.github.io/todo-app/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/gaming-blog.jpeg"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Gaming Blog</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/mohammadsaymon/weather-app'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href=''"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='#hobbies'"
+      />
+    </section>
+    <section id="hobbies">
+      <p class="section__text__p1">My Interests and Hobbies</p>
+      <h1 class="title">Hobbies</h1>
+      <div class="hobbies-container">
+        <div class="hobby-card">
+          <h2 class="hobby-title">Web Development</h2>
+          <p>
+            I enjoy creating web applications, experimenting with new technologies, and staying up-to-date with industry trends. 
+          </p>
+        </div>
+        <div class="hobby-card">
+          <h2 class="hobby-title">Gaming</h2>
+          <p>
+            Gaming is a great way for me to relax and have fun. I love playing strategy games and exploring new virtual worlds.
+          </p>
+        </div>
+        <div class="hobby-card">
+          <h2 class="hobby-title">Reading</h2>
+          <p>
+            I enjoy reading books, especially science fiction and self-development books that expand my knowledge.
+          </p>
+        </div>
+        <div class="hobby-card">
+          <h2 class="hobby-title">Traveling</h2>
+          <p>
+            Exploring new places, cultures, and cuisines is one of my greatest passions. I love discovering the beauty of the world.
+          </p>
+        </div>
+        <div class="hobby-card">
+          <h2 class="hobby-title">Fitness</h2>
+          <p>
+            Staying active and healthy is important to me, and I enjoy outdoor activities like hiking, swimming, and jogging.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+    
+      <!-- Contact Form -->
+      <div class="contact-form-container">
+        <form action="your-server-endpoint-or-email-handler" method="POST" class="contact-form">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+    
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+    
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+    
+          <button type="submit" class="btn btn-color-1">Send Message</button>
+        </form>
+      </div>
+    
+      <!-- Social Media Links -->
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img src="./assets/email.gif" alt="Email icon" class="icon contact-icon email-icon" />
+          <p><a href="mailto:examplemail@gmail.com">examplemail@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+          <p><a href="https://www.linkedin.com/in/" target="_blank">LinkedIn</a></p>
+        </div>
+        <!-- Add Facebook link here -->
+        <div class="contact-info-container">
+          <img src="./assets/facebook.png" alt="Facebook icon" class="icon contact-icon" />
+          <p><a href="https://www.facebook.com/naturalistsaimon73*+" target="_blank">Facebook</a></p>
+        </div>
+      </div>
+    </section>
+    
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2025 Mohammad Saymon. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
