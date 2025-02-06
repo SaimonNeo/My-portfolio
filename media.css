@@ -41,7 +41,12 @@
       width: 275px;
       height: 275px;
       margin: 0 auto 2rem;
+    
     }
+    .section__pic-container img{
+        width:100%;
+    }
+        
     .about-containers {
       margin-top: 0;
     }
