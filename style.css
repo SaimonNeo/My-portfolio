@@ -176,6 +176,10 @@ section {
   margin: auto 0;
 }
 
+.section__pic-container .avatar{
+    width: 100%;
+}
+
 .section__text {
   align-self: center;
   text-align: center;
