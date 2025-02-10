@@ -40,7 +40,7 @@
     .section__pic-container {
       width: 275px;
       height: auto;
-      margin: 0 auto 2rem;
+      margin: 2rem auto 2rem;
     
     }
     .section__pic-container img{
@@ -59,8 +59,9 @@
       height: 40vh;
     }
     #profile {
-      height: 83vh;
+      height: auto;
       margin-bottom: 0;
+      padding-bottom: 0;
     }
     article {
       font-size: 1rem;
