@@ -44,7 +44,7 @@
     
     }
     .section__pic-container img{
-        width:100%;
+        /* width:100%; */
     }
         
     .about-containers {
@@ -92,12 +92,14 @@
       text-align: center;
     }
     .section__pic-container {
+        display: flex;
       width: auto;
-      
+      height: auto;
       justify-content: center;
     }
-    .section__pic-container img{
-        height: 400px;
+    .section__pic-container .avatar{
+        width: 200px;
+        height: 200px;
     }
     .section__text__p2 {
       font-size: 1.25rem;
