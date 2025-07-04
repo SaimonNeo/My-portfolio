@@ -713,6 +713,14 @@
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
         .delay-4 { animation-delay: 0.8s; }
+
+        #alert {
+            font-size: 50px;
+            color: rgb(255, 196, 0);
+            font-display: uppercase;
+        }
+
+
     </style>
 </head>
 <body>
@@ -757,10 +765,12 @@
             <span id="audioStatus" style="color: var(--gray);">Sound off</span>
         </div>
     </div>
+            <p id="alert">This Portfolio Underdevlopment</p>
+
     
     <!-- Updated Video Element -->
     <video id="heroVideo" class="hero-video" loop style="opacity: 0.7;">
-        <source src="./assets/Step Into the Action - Watch this Professional 4K Trailer Now!.mp4" type="video/mp4">
+        <source src="" type="video/mp4">
     </video>
 </section>
 
@@ -839,19 +849,70 @@ video.play().catch(e => {
     object-fit: cover;
     z-index: -1;
 }
+
+
+</style>
+<!-- Recent Work  -->
+<style>
+#recent-work {
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    
+    
+}
+#recent-work h4{
+    border-radius: 10px;
+    display: inline;
+    background-color: #e03a4e;
+}
+
+
+iframe {
+    border-radius: 10px;
+}
+iframe:hover {
+    border: 1px solid #ff4655;
+    background-color: #ff4655;
+}
+
 </style>
 
+ <section id="recent-work">
+    <div>
+
+    <h4>Recent work </h4>
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/b4PWuGyIAfo?si=B17wKjnmQg42CZBE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/b7QuyZOdwps?si=_MiwRTNkakB4oW14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mpnMshw2h5E?si=_NKRARyPa3y5lRCm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        </div>
+
+
+             </div>
+
+
+
+
+ </section>
+
+
+
+
+
     <!-- Projects Section -->
-    <section id="projects">
+    
+     <section id="projects">
         <div class="section-title fade-in">
-            <h2>My Projects</h2>
-            <p>A showcase of my best video work</p>
+            <h2>My Projects <h1 style="color: red; display: ;">Underdevlopment</h1></h2>
+            <p>A showcase of my best video work</p> 
         </div>
         <div class="projects-grid">
             <!-- Project 1 -->
-            <div class="project-card fade-in delay-1" onclick="openModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+            <div class="project-card fade-in delay-1" onclick="openModal('')">
                 <div class="project-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1459&q=80" alt="Cinematic Short Film">
+                    <!-- <img src="" alt="Cinematic Short Film"> -->
                     <div class="play-icon"><i class="fas fa-play"></i></div>
                 </div>
                 <div class="project-info">
@@ -866,10 +927,10 @@ video.play().catch(e => {
             </div>
             
             <!-- Project 2 -->
-            <div class="project-card fade-in delay-2" onclick="openModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
-                <div class="project-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Product Commercial">
-                    <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="project-card fade-in delay-2" onclick="openModal('')">
+                <div class="project-thumbnail"></div>
+                    
+                <div class="play-icon"><i class="fas fa-play"></i></div>
                 </div>
                 <div class="project-info">
                     <h3>Luxury Watch Commercial</h3>
@@ -883,9 +944,9 @@ video.play().catch(e => {
             </div>
             
             <!-- Project 3 -->
-            <div class="project-card fade-in delay-3" onclick="openModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+            <div class="project-card fade-in delay-3" onclick="openModal('')">
                 <div class="project-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Travel Vlog">
+                    <!-- <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Travel Vlog"> -->
                     <div class="play-icon"><i class="fas fa-play"></i></div>
                 </div>
                 <div class="project-info">
@@ -900,9 +961,9 @@ video.play().catch(e => {
             </div>
             
             <!-- Project 4 -->
-            <div class="project-card fade-in delay-4" onclick="openModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+            <div class="project-card fade-in delay-4" onclick="openModal('')">
                 <div class="project-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Music Video">
+                    <!-- <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Music Video"> -->
                     <div class="play-icon"><i class="fas fa-play"></i></div>
                 </div>
                 <div class="project-info">
@@ -917,9 +978,9 @@ video.play().catch(e => {
             </div>
             
             <!-- Project 5 -->
-            <div class="project-card fade-in delay-1" onclick="openModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+            <div class="project-card fade-in delay-1" onclick="openModal('')">
                 <div class="project-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Corporate Video">
+                    <!-- <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Corporate Video"> -->
                     <div class="play-icon"><i class="fas fa-play"></i></div>
                 </div>
                 <div class="project-info">
@@ -951,7 +1012,6 @@ video.play().catch(e => {
             </div>
         </div>
     </section>
-
     <!-- Services Section -->
     <section id="services">
         <div class="section-title fade-in">
@@ -1027,7 +1087,7 @@ video.play().catch(e => {
 </section>
 
 <style> 
-    /* Hire Me Section */
+     /* Hire Me Section*/
 #hire-me .service-card {
     padding: 2.5rem;
     text-align: center;
