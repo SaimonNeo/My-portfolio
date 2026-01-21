@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Saymon | Video Editor & Web Developer Portfolio</title>
+    <title>Mohammad Saymon | Video Editor & Web Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
     <style>
         :root {
@@ -25,6 +25,7 @@
             background-color: var(--primary);
             color: var(--light);
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         
         /* Navigation */
@@ -60,39 +61,10 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
-            position: relative;
         }
         
         .nav-links a:hover {
             color: var(--secondary);
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-        
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: var(--light);
-            margin: 5px;
-            transition: all 0.3s ease;
         }
         
         /* Hero Section */
@@ -119,49 +91,13 @@
         .hero-content h1 span {
             color: var(--secondary);
         }
-        
-        .hero-content p {
+
+        #alert {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: var(--gray);
-            max-width: 80%;
-        }
-        
-        .hero-btns {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .btn {
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
-            cursor: pointer;
-        }
-        
-        .btn-primary {
-            background-color: var(--secondary);
-            color: var(--light);
-            border: 2px solid var(--secondary);
-        }
-        
-        .btn-primary:hover {
-            background-color: transparent;
-            color: var(--secondary);
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--light);
-            border: 2px solid var(--light);
-        }
-        
-        .btn-secondary:hover {
-            background-color: var(--light);
-            color: var(--primary);
+            color: #ffc400;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 15px;
         }
         
         .hero-video {
@@ -171,94 +107,63 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.7;
+            opacity: 0.6;
             z-index: -1;
         }
-        
-        #alert {
-            font-size: 20px;
-            color: rgb(255, 196, 0);
-            text-transform: uppercase;
-            margin-top: 20px;
+
+        /* Buttons */
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
         }
 
-        /* Projects Section */
-        #projects {
-            padding: 5rem 5%;
-        }
-        
+        .btn-primary { background: var(--secondary); color: white; }
+        .btn-secondary { border: 2px solid white; color: white; background: transparent; }
+        .btn-primary:hover { background: #e03a4e; }
+
+        /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
         
         .project-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
-            position: relative;
-            display: flex;
-            flex-direction: column;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
         }
         
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
+        .project-card:hover { transform: translateY(-10px); border-color: var(--secondary); }
         
         .project-thumbnail {
-            position: relative;
-            height: 200px;
-            background: #1a252f; /* Fallback */
+            height: 180px;
+            background: #1a252f;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        
-        .play-icon {
             font-size: 3rem;
-            color: white;
-            opacity: 0.8;
-            transition: all 0.3s;
+            color: var(--secondary);
         }
         
-        .project-card:hover .play-icon {
-            opacity: 1;
-            transform: scale(1.2);
-        }
-        
-        .project-info {
-            padding: 1.5rem;
-            flex-grow: 1;
-        }
-        
-        .project-info h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .project-info p {
-            color: var(--gray);
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
+        .project-info { padding: 1.5rem; }
         
         .tag {
-            background-color: rgba(255, 70, 85, 0.1);
+            font-size: 0.75rem;
+            background: rgba(255, 70, 85, 0.1);
             color: var(--secondary);
-            padding: 0.3rem 0.8rem;
+            padding: 4px 10px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            margin-right: 5px;
         }
 
         /* Recent Work Section */
@@ -268,84 +173,40 @@
         }
         
         #recent-work h4 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-size: 2rem;
+            background: var(--secondary);
             display: inline-block;
-            background-color: var(--secondary);
-            padding: 10px 20px;
-            border-radius: 10px;
+            padding: 10px 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
         }
-        
-        .video-flex {
+
+        .video-container-flex {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
 
-        iframe {
-            border-radius: 10px;
-            border: none;
-            transition: border 0.3s;
-        }
+        iframe { border-radius: 10px; border: none; }
 
-        /* Customizer UI */
+        /* Customizer */
         .customizer {
-            position: fixed; 
-            bottom: 20px; 
-            right: 20px; 
-            z-index: 1000; 
-            background: rgba(15, 25, 35, 0.9); 
-            padding: 15px; 
-            border-radius: 8px; 
-            backdrop-filter: blur(5px); 
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            top: 0; left: 0;
+            position: fixed; bottom: 20px; right: 20px; z-index: 1000;
+            background: rgba(15, 25, 35, 0.95); padding: 15px; border-radius: 10px;
+            border: 1px solid var(--secondary);
         }
         
-        .modal-content {
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 80%;
-            margin: auto;
+        /* Modal */
+        .modal {
+            display: none; position: fixed; z-index: 2000; top: 0; left: 0;
+            width: 100%; height: 100%; background: rgba(0,0,0,0.95);
         }
+        .modal-content { width: 80%; margin: 10% auto; position: relative; }
 
-        .close-btn {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
             .hero-content { width: 100%; text-align: center; }
             .nav-links { display: none; }
-            .hamburger { display: block; }
         }
     </style>
 </head>
@@ -355,183 +216,128 @@
         <div class="logo">SAYMON</div>
         <ul class="nav-links">
             <li><a href="#hero">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#web-dev">Websites</a></li>
+            <li><a href="#recent-work">Video Work</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="hamburger">
-            <div></div><div></div><div></div>
-        </div>
     </nav>
 
     <section id="hero">
         <div class="hero-content">
-            <h1>Bringing Stories to Life Through <span>Visual Design</span></h1>
-            <p>I'm Mohammad Saymon, a Video Editor and Web Developer specializing in cinematic storytelling and high-converting websites.</p>
+            <h1>Dynamic <span>Websites</span> & Cinematic <span>Editing</span></h1>
+            <p>I build high-performance service websites and edit professional cinematic content.</p>
             <div class="hero-btns">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Hire Me</a>
+                <a href="#web-dev" class="btn btn-primary">My Websites</a>
+                <a href="mailto:naturalistsaimon@gmail.com" class="btn btn-secondary">Direct Hire</a>
             </div>
-            
             <p id="alert">Portfolio Under Development</p>
-
-            <div class="audio-control" style="margin-top: 20px; display: flex; align-items: center; gap: 10px;">
-                <button id="toggleAudio" style="background: var(--secondary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer;">
-                    <i class="fas fa-volume-mute" id="audioIcon"></i>
-                </button>
-                <span id="audioStatus" style="color: var(--gray);">Sound off</span>
-            </div>
         </div>
         <video id="heroVideo" class="hero-video" autoplay loop muted>
-            <source src="your-video-file.mp4" type="video/mp4">
+            <source src="" type="video/mp4">
         </video>
+    </section>
+
+    <section id="web-dev" style="padding: 5rem 5%;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-size: 2.5rem;">Web Development Portfolio</h2>
+            <p style="color: var(--gray);">Active GTA Service Sites & Hosting Management</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-thumbnail"><i class="fas fa-glass-martini-alt"></i></div>
+                <div class="project-info">
+                    <h3>Window Door Glass Repair</h3>
+                    <p>Active since Jan 13, 2026. Specialized glass restoration.</p>
+                    <div style="margin-bottom:15px;"><span class="tag">Active</span><span class="tag">WordPress</span></div>
+                    <a href="https://windowdoorglassrepairgta.ca/" target="_blank" class="btn btn-primary" style="width:100%; text-align:center;">Visit Site</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-thumbnail"><i class="fas fa-cog"></i></div>
+                <div class="project-info">
+                    <h3>Window Crank Repair</h3>
+                    <p>Active since Jan 3, 2026. Specialized hardware focus.</p>
+                    <div style="margin-bottom:15px;"><span class="tag">Active</span><span class="tag">WP Admin</span></div>
+                    <a href="https://windowcrankrepairgta.ca/" target="_blank" class="btn btn-primary" style="width:100%; text-align:center;">Visit Site</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-thumbnail"><i class="fas fa-door-open"></i></div>
+                <div class="project-info">
+                    <h3>Patio Door Repair GTA</h3>
+                    <p>Active since Dec 26, 2025. Optimized for GTA leads.</p>
+                    <div style="margin-bottom:15px;"><span class="tag">Active</span><span class="tag">WordPress</span></div>
+                    <a href="https://patiodoorrepairgta.ca/" target="_blank" class="btn btn-primary" style="width:100%; text-align:center;">Visit Site</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-thumbnail"><i class="fas fa-th"></i></div>
+                <div class="project-info">
+                    <h3>Screen Door Repair GTA</h3>
+                    <p>Active since Dec 6, 2025. Service landing page.</p>
+                    <div style="margin-bottom:15px;"><span class="tag">Active</span><span class="tag">WordPress</span></div>
+                    <a href="https://screendoorrepairgta.ca/" target="_blank" class="btn btn-primary" style="width:100%; text-align:center;">Visit Site</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-thumbnail"><i class="fas fa-cloud"></i></div>
+                <div class="project-info">
+                    <h3>Foggy Window Repair GTA</h3>
+                    <p>Moisture removal and restoration specialist site.</p>
+                    <div style="margin-bottom:15px;"><span class="tag">Live</span><span class="tag">Service Site</span></div>
+                    <a href="https://foggywindowrepairgta.com/" target="_blank" class="btn btn-primary" style="width:100%; text-align:center;">Visit Site</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="recent-work">
         <h4>Recent Video Work</h4>
-        <div class="video-flex">
-            <iframe width="450" height="250" src="https://www.youtube.com/embed/b4PWuGyIAfo" title="YouTube video player" allowfullscreen></iframe>
-            <iframe width="450" height="250" src="https://www.youtube.com/embed/b7QuyZOdwps" title="YouTube video player" allowfullscreen></iframe>
+        <div class="video-container-flex">
+            <iframe width="480" height="270" src="https://www.youtube.com/embed/b4PWuGyIAfo" allowfullscreen></iframe>
+            <iframe width="480" height="270" src="https://www.youtube.com/embed/b7QuyZOdwps" allowfullscreen></iframe>
+            <iframe width="480" height="270" src="https://www.youtube.com/embed/mpnMshw2h5E" allowfullscreen></iframe>
         </div>
     </section>
 
-    <section id="projects">
-        <div class="section-title" style="text-align: center; margin-bottom: 3rem;">
-            <h2 style="font-size: 2.5rem;">Project Showcase</h2>
-            <p style="color: var(--gray);">Web Development & Video Production</p>
+    <section id="contact" style="padding: 5rem 5%; background: rgba(255,255,255,0.02);">
+        <div style="text-align:center; margin-bottom: 30px;">
+            <h2>Get In Touch</h2>
+            <p>naturalistsaimon@gmail.com</p>
         </div>
-        
-        <div class="projects-grid">
-            
-            <div class="project-card">
-                <div class="project-thumbnail">
-                    <i class="fas fa-window-maximize play-icon"></i>
-                </div>
-                <div class="project-info">
-                    <h3>Patio Door Repair GTA</h3>
-                    <p>Professional service website built for local repair experts. Features SEO optimization and high-conversion landing pages.</p>
-                    <div class="project-tags">
-                        <span class="tag">Web Design</span>
-                        <span class="tag">SEO</span>
-                        <span class="tag">UI/UX</span>
-                    </div>
-                    <a href="https://patiodoorrepairgta.ca/" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">Visit Site</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-thumbnail">
-                    <i class="fas fa-tools play-icon"></i>
-                </div>
-                <div class="project-info">
-                    <h3>Window Crank Repair GTA</h3>
-                    <p>A niche service website focusing on window hardware repair. Optimized for mobile responsiveness and quick load times.</p>
-                    <div class="project-tags">
-                        <span class="tag">WordPress</span>
-                        <span class="tag">Responsive</span>
-                        <span class="tag">Branding</span>
-                    </div>
-                    <a href="https://windowcrankrepairgta.ca/" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">Visit Site</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-thumbnail">
-                    <i class="fas fa-door-open play-icon"></i>
-                </div>
-                <div class="project-info">
-                    <h3>Screen Door Repair GTA</h3>
-                    <p>Landing page designed for Google Ads campaigns, focusing on direct customer calls and service inquiries.</p>
-                    <div class="project-tags">
-                        <span class="tag">Marketing</span>
-                        <span class="tag">Web Dev</span>
-                        <span class="tag">GTA</span>
-                    </div>
-                    <a href="https://screendoorrepairgta.ca/" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">Visit Site</a>
-                </div>
-            </div>
-
-            <div class="project-card" onclick="openModal('https://www.youtube.com/embed/bQw6nEnot08')">
-                <div class="project-thumbnail">
-                    <i class="fas fa-play play-icon"></i>
-                </div>
-                <div class="project-info">
-                    <h3>Cinematic Montage</h3>
-                    <p>A high-energy video montage showcasing advanced transition techniques and color grading.</p>
-                    <div class="project-tags">
-                        <span class="tag">Video Editing</span>
-                        <span class="tag">After Effects</span>
-                    </div>
-                    <button class="btn btn-secondary" style="width: 100%;">Watch Video</button>
-                </div>
-            </div>
-
+        <div style="max-width: 600px; margin: auto;">
+            <form style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="text" placeholder="Name" style="padding: 10px; border-radius: 5px; background: #1a252f; border: 1px solid #333; color: white;">
+                <input type="email" placeholder="Email" style="padding: 10px; border-radius: 5px; background: #1a252f; border: 1px solid #333; color: white;">
+                <textarea placeholder="Message" rows="5" style="padding: 10px; border-radius: 5px; background: #1a252f; border: 1px solid #333; color: white;"></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
         </div>
     </section>
 
     <div class="customizer">
-        <h3 style="color: white; margin-bottom: 10px; font-size: 14px;">Theme Colors</h3>
-        <div style="display: flex; gap: 10px;">
-            <input type="color" id="primaryColor" value="#0f1923" title="Background Color">
-            <input type="color" id="accentColor" value="#ff4655" title="Accent Color">
-        </div>
+        <p style="font-size: 12px; margin-bottom: 5px;">Accent Color</p>
+        <input type="color" id="accentPicker" value="#ff4655">
     </div>
 
-    <div id="videoModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <div class="video-container">
-                <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
+    <div id="topBtn" style="position:fixed; bottom:20px; left:20px; background:var(--secondary); width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-weight:bold;">↑</div>
 
     <script>
-        // Modal Logic
-        function openModal(url) {
-            document.getElementById('videoModal').style.display = 'block';
-            document.getElementById('modalVideo').src = url;
-            document.body.style.overflow = 'hidden';
-        }
-        function closeModal() {
-            document.getElementById('videoModal').style.display = 'none';
-            document.getElementById('modalVideo').src = '';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Color Customizer
-        const primaryInput = document.getElementById('primaryColor');
-        const accentInput = document.getElementById('accentColor');
-
-        primaryInput.addEventListener('input', () => {
-            document.documentElement.style.setProperty('--primary', primaryInput.value);
-        });
-        accentInput.addEventListener('input', () => {
-            document.documentElement.style.setProperty('--secondary', accentInput.value);
+        // Accent Color Change
+        document.getElementById('accentPicker').addEventListener('input', function() {
+            document.documentElement.style.setProperty('--secondary', this.value);
         });
 
-        // Audio Toggle
-        const video = document.getElementById('heroVideo');
-        const toggleBtn = document.getElementById('toggleAudio');
-        const audioIcon = document.getElementById('audioIcon');
-
-        toggleBtn.addEventListener('click', () => {
-            video.muted = !video.muted;
-            audioIcon.className = video.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
-            document.getElementById('audioStatus').textContent = video.muted ? 'Sound off' : 'Sound on';
-        });
-
-        // Hamburger Menu
-        const hamburger = document.querySelector('.hamburger');
-        const nav = document.querySelector('.nav-links');
-        hamburger.addEventListener('click', () => {
-            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-            nav.style.flexDirection = 'column';
-            nav.style.position = 'absolute';
-            nav.style.top = '70px';
-            nav.style.width = '100%';
-            nav.style.background = 'var(--primary)';
+        // Scroll to Top
+        document.getElementById('topBtn').addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
         });
     </script>
+
 </body>
 </html>
