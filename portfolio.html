@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Saymon | Video Editor Portfolio</title>
+    <title>Mohammad Saymon | Video Editor & Web Developer Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
     <style>
         :root {
@@ -139,6 +139,7 @@
             text-decoration: none;
             transition: all 0.3s;
             display: inline-block;
+            cursor: pointer;
         }
         
         .btn-primary {
@@ -169,97 +170,18 @@
             top: 0;
             width: 100%;
             height: 100%;
-            object-fit: fill;
+            object-fit: cover;
             opacity: 0.7;
+            z-index: -1;
         }
         
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
+        #alert {
+            font-size: 20px;
+            color: rgb(255, 196, 0);
+            text-transform: uppercase;
+            margin-top: 20px;
         }
-        
-        .social-icons a {
-            color: var(--light);
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        
-        .social-icons a:hover {
-            color: var(--secondary);
-        }
-        
-        /* About Section */
-        #about {
-            padding: 5rem 5%;
-            background-color: rgba(255, 255, 255, 0.03);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-title p {
-            color: var(--gray);
-            font-size: 1.2rem;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-        
-        .about-img {
-            width: 40%;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-        
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .about-text {
-            width: 60%;
-        }
-        
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--secondary);
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .skill {
-            background-color: rgba(255, 70, 85, 0.1);
-            color: var(--secondary);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid var(--secondary);
-        }
-        
+
         /* Projects Section */
         #projects {
             padding: 5rem 5%;
@@ -267,17 +189,20 @@
         
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
         
         .project-card {
+            background-color: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
         
         .project-card:hover {
@@ -287,25 +212,13 @@
         .project-thumbnail {
             position: relative;
             height: 200px;
-            overflow: hidden;
-        }
-        
-        .project-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .project-card:hover .project-thumbnail img {
-            transform: scale(1.1);
+            background: #1a252f; /* Fallback */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             font-size: 3rem;
             color: white;
             opacity: 0.8;
@@ -314,12 +227,12 @@
         
         .project-card:hover .play-icon {
             opacity: 1;
-            transform: translate(-50%, -50%) scale(1.2);
+            transform: scale(1.2);
         }
         
         .project-info {
             padding: 1.5rem;
-            background-color: rgba(255, 255, 255, 0.05);
+            flex-grow: 1;
         }
         
         .project-info h3 {
@@ -337,6 +250,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
+            margin-bottom: 1.5rem;
         }
         
         .tag {
@@ -346,900 +260,226 @@
             border-radius: 20px;
             font-size: 0.8rem;
         }
-        
-        /* Services Section */
-        #services {
+
+        /* Recent Work Section */
+        #recent-work {
             padding: 5rem 5%;
-            background-color: rgba(255, 255, 255, 0.03);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .service-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            border-left: 3px solid var(--secondary);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            background-color: rgba(255, 70, 85, 0.1);
-        }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-        }
-        
-        .service-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .service-card p {
-            color: var(--gray);
-            line-height: 1.6;
-        }
-        
-        /* Contact Section */
-        #contact {
-            padding: 5rem 5%;
-        }
-        
-        .contact-container {
-            display: flex;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-        
-        .contact-info {
-            width: 40%;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--secondary);
-        }
-        
-        .contact-info p {
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-        
-        .contact-details {
-            margin-top: 2rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--secondary);
-            margin-right: 1rem;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 70, 85, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .contact-text h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-        }
-        
-        .contact-text p, .contact-text a {
-            color: var(--gray);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .contact-text a:hover {
-            color: var(--secondary);
-        }
-        
-        .contact-form {
-            width: 60%;
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 10px;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            color: var(--light);
-            font-size: 1rem;
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-        
-        .submit-btn {
-            background-color: var(--secondary);
-            color: var(--light);
-            border: none;
-            padding: 0.8rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background-color: #e03a4e;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: rgba(0, 0, 0, 0.2);
-            padding: 2rem 5%;
             text-align: center;
         }
         
-        .footer-content {
+        #recent-work h4 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+            background-color: var(--secondary);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        
+        .video-flex {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
         }
-        
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 1rem;
+
+        iframe {
+            border-radius: 10px;
+            border: none;
+            transition: border 0.3s;
         }
-        
-        .footer-links {
-            display: flex;
-            list-style: none;
-            margin-bottom: 1.5rem;
+
+        /* Customizer UI */
+        .customizer {
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            z-index: 1000; 
+            background: rgba(15, 25, 35, 0.9); 
+            padding: 15px; 
+            border-radius: 8px; 
+            backdrop-filter: blur(5px); 
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        
-        .footer-links li {
-            margin: 0 1rem;
-        }
-        
-        .footer-links a {
-            color: var(--light);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--secondary);
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-social a {
-            color: var(--light);
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        
-        .footer-social a:hover {
-            color: var(--secondary);
-        }
-        
-        .copyright {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-        
-        /* Video Modal */
+
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
             z-index: 2000;
-            left: 0;
-            top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            overflow: auto;
+            background: rgba(0,0,0,0.9);
+            top: 0; left: 0;
         }
         
         .modal-content {
             position: relative;
-            margin: auto;
-            padding: 2rem;
-            width: 80%;
-            max-width: 1200px;
             top: 50%;
             transform: translateY(-50%);
+            width: 80%;
+            margin: auto;
         }
-        
+
         .close-btn {
             position: absolute;
-            top: 20px;
-            right: 30px;
+            top: -40px;
+            right: 0;
             color: white;
             font-size: 2rem;
-            font-weight: bold;
             cursor: pointer;
-            z-index: 2001;
         }
-        
+
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
-            overflow: hidden;
         }
-        
+
         .video-container iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
+            top: 0; left: 0; width: 100%; height: 100%;
         }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .hero-content {
-                width: 60%;
-            }
-            
-            .hero-video {
-                width: 40%;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-img, .about-text {
-                width: 100%;
-            }
-            
-            .contact-container {
-                flex-direction: column;
-            }
-            
-            .contact-info, .contact-form {
-                width: 100%;
-            }
-        }
-        
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hamburger {
-                display: block;
-            }
-            
-            .hero-content {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .hero-content p {
-                max-width: 100%;
-            }
-            
-            .hero-btns {
-                justify-content: center;
-            }
-            
-            .hero-video {
-                display: none;
-            }
-            
-            .about-img {
-                width: 80%;
-                margin-bottom: 2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
+            .hero-content { width: 100%; text-align: center; }
+            .nav-links { display: none; }
+            .hamburger { display: block; }
         }
-        
-        @media (max-width: 576px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .modal-content {
-                width: 95%;
-                padding: 1rem;
-            }
-        }
-        
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 1s ease forwards;
-        }
-        
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-        .delay-4 { animation-delay: 0.8s; }
-
-        #alert {
-            font-size: 50px;
-            color: rgb(255, 196, 0);
-            font-display: uppercase;
-        }
-
-
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+
     <nav>
         <div class="logo">SAYMON</div>
         <ul class="nav-links">
             <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div></div><div></div><div></div>
         </div>
     </nav>
 
-    <!-- Replace your current hero video section with this -->
-<section id="hero">
-    <div class="hero-content fade-in">
-        <h1>Bringing Stories to Life Through <span>Video Editing</span></h1>
-        <p>I'm Mohammad Saymon, a passionate video editor specializing in cinematic storytelling...</p>
-        <div class="hero-btns">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="#contact" class="btn btn-secondary">Hire Me</a>
-        </div>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-vimeo-v"></i></a>
-        </div>
-        
-        <!-- Add this audio control UI -->
-        <div class="audio-control" style="margin-top: 20px; display: flex; align-items: center; gap: 10px;">
-            <button id="toggleAudio" style="background: var(--secondary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer;">
-                <i class="fas fa-volume-mute" id="audioIcon"></i>
-            </button>
-            <span id="audioStatus" style="color: var(--gray);">Sound off</span>
-        </div>
-    </div>
-            <p id="alert">This Portfolio Underdevlopment</p>
-
-    
-    <!-- Updated Video Element -->
-    <video id="heroVideo" class="hero-video" loop style="opacity: 0.7;">
-        <source src="" type="video/mp4">
-    </video>
-</section>
-
-<script>
-// Video with audio control
-const video = document.getElementById('heroVideo');
-const toggleBtn = document.getElementById('toggleAudio');
-const audioIcon = document.getElementById('audioIcon');
-const audioStatus = document.getElementById('audioStatus');
-
-// Muted by default to allow autoplay
-video.muted = true;
-
-// Toggle audio function
-toggleBtn.addEventListener('click', function() {
-    video.muted = !video.muted;
-    
-    if (video.muted) {
-        audioIcon.className = 'fas fa-volume-mute';
-        audioStatus.textContent = 'Sound off';
-    } else {
-        audioIcon.className = 'fas fa-volume-up';
-        audioStatus.textContent = 'Sound on';
-        
-        // On first unmute, attempt to play (required by some browsers)
-        video.play().catch(e => console.log("Playback failed:", e));
-    }
-});
-
-// Autoplay with sound workaround (for supported browsers)
-document.addEventListener('click', function initAudio() {
-    if (video.paused) {
-        video.play().then(() => {
-            // Some browsers will allow unmuting after user interaction
-            video.muted = false;
-            audioIcon.className = 'fas fa-volume-up';
-            audioStatus.textContent = 'Sound on';
-        }).catch(e => console.log("Autoplay with sound not allowed"));
-    }
-    document.removeEventListener('click', initAudio);
-}, { once: true });
-
-// Fallback for browsers that block autoplay
-video.play().catch(e => {
-    console.log("Autoplay blocked, will wait for user interaction");
-    toggleBtn.style.display = 'flex'; // Make sure control is visible
-});
-</script>
-
-<style>
-/* Add this to your existing styles */
-.audio-control {
-    animation: fadeIn 1s ease forwards;
-    animation-delay: 1s;
-    opacity: 0;
-}
-
-#toggleAudio {
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#toggleAudio:hover {
-    transform: scale(1.1);
-    background: #e03a4e !important;
-}
-
-.hero-video {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-
-</style>
-<!-- Recent Work  -->
-<style>
-#recent-work {
-    align-items: center;
-    text-align: center;
-    font-size: 3rem;
-    
-    
-}
-#recent-work h4{
-    border-radius: 10px;
-    display: inline;
-    background-color: #e03a4e;
-}
-
-
-iframe {
-    border-radius: 10px;
-}
-iframe:hover {
-    border: 1px solid #ff4655;
-    background-color: #ff4655;
-}
-
-</style>
-
- <section id="recent-work">
-    <div>
-
-    <h4>Recent work </h4>
-        <div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/b4PWuGyIAfo?si=B17wKjnmQg42CZBE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/b7QuyZOdwps?si=_MiwRTNkakB4oW14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/mpnMshw2h5E?si=_NKRARyPa3y5lRCm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/bQw6nEnot08?si=Jx_sXiY-ywd1wxNa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-
-
-             </div>
-
-
-
-
- </section>
-
-
-
-
-
-    <!-- Projects Section -->
-    
-     <section id="projects">
-        <div class="section-title fade-in">
-            <h2>My Projects <h1 style="color: red; display: ;">Underdevlopment</h1></h2>
-            <p>A showcase of my best video work</p> 
-        </div>
-        <section id="projects">
-    <div class="section-title fade-in">
-        <h2>Featured Projects</h2>
-        <p>A showcase of my web development and video work</p> 
-    </div>
-    <div class="projects-grid">
-        
-        <div class="project-card fade-in delay-1">
-            <div class="project-thumbnail">
-                <div class="play-icon"><i class="fas fa-external-link-alt"></i></div>
-            </div>
-            <div class="project-info">
-                <h3>Patio Door Repair GTA</h3>
-                <p>A professional service website optimized for local SEO and lead generation in the GTA area.</p>
-                <div class="project-tags">
-                    <span class="tag">Web Design</span>
-                    <span class="tag">SEO</span>
-                    <span class="tag">UI/UX</span>
-                </div>
-                <a href="https://patiodoorrepairgta.ca/" target="_blank" class="btn btn-secondary" style="margin-top: 10px; width: 100%; text-align: center; font-size: 0.8rem;">Visit Website</a>
-            </div>
-        </div>
-
-        <div class="project-card fade-in delay-2">
-            <div class="project-thumbnail">
-                <div class="play-icon"><i class="fas fa-external-link-alt"></i></div>
-            </div>
-            <div class="project-info">
-                <h3>Window Crank Repair GTA</h3>
-                <p>Custom-built landing page focused on conversion for specialized hardware repair services.</p>
-                <div class="project-tags">
-                    <span class="tag">Responsive</span>
-                    <span class="tag">WordPress</span>
-                    <span class="tag">Optimization</span>
-                </div>
-                <a href="https://windowcrankrepairgta.ca/" target="_blank" class="btn btn-secondary" style="margin-top: 10px; width: 100%; text-align: center; font-size: 0.8rem;">Visit Website</a>
-            </div>
-        </div>
-
-        <div class="project-card fade-in delay-3">
-            <div class="project-thumbnail">
-                <div class="play-icon"><i class="fas fa-external-link-alt"></i></div>
-            </div>
-            <div class="project-info">
-                <h3>Screen Door Repair GTA</h3>
-                <p>Clean and modern service-based website featuring responsive layouts and clear call-to-actions.</p>
-                <div class="project-tags">
-                    <span class="tag">Elementor</span>
-                    <span class="tag">GTA Services</span>
-                    <span class="tag">Web Dev</span>
-                </div>
-                <a href="https://screendoorrepairgta.ca/" target="_blank" class="btn btn-secondary" style="margin-top: 10px; width: 100%; text-align: center; font-size: 0.8rem;">Visit Website</a>
-            </div>
-        </div>
-
-        <div class="project-card fade-in delay-4" onclick="openModal('https://www.youtube.com/embed/b4PWuGyIAfo')">
-            <div class="project-thumbnail">
-                <div class="play-icon"><i class="fas fa-play"></i></div>
-            </div>
-            <div class="project-info">
-                <h3>Cinematic Storytelling</h3>
-                <p>High-quality video editing project focusing on transitions and color grading.</p>
-                <div class="project-tags">
-                    <span class="tag">Video Editing</span>
-                    <span class="tag">Cinematic</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-            
-            <!-- Project 3 -->
-            <div class="project-card fade-in delay-3" onclick="openModal('')">
-                <div class="project-thumbnail">
-                    <!-- <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Travel Vlog"> -->
-                    <div class="play-icon"><i class="fas fa-play"></i></div>
-                </div>
-                <div class="project-info">
-                    <h3>Bali Travel Vlog Series</h3>
-                    <p>10-episode travel series featuring dynamic editing and vibrant color grading.</p>
-                    <div class="project-tags">
-                        <span class="tag">Travel</span>
-                        <span class="tag">Vlog</span>
-                        <span class="tag">Color Grading</span>
-                    </div>
-                </div>
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Bringing Stories to Life Through <span>Visual Design</span></h1>
+            <p>I'm Mohammad Saymon, a Video Editor and Web Developer specializing in cinematic storytelling and high-converting websites.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Hire Me</a>
             </div>
             
-            <!-- Project 4 -->
-            <div class="project-card fade-in delay-4" onclick="openModal('')">
-                <div class="project-thumbnail">
-                    <!-- <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Music Video"> -->
-                    <div class="play-icon"><i class="fas fa-play"></i></div>
-                </div>
-                <div class="project-info">
-                    <h3>"Midnight Dreams" Music Video</h3>
-                    <p>Collaboration with indie band featuring surreal visuals and rhythmic editing.</p>
-                    <div class="project-tags">
-                        <span class="tag">Music Video</span>
-                        <span class="tag">Creative</span>
-                        <span class="tag">Visual Effects</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 5 -->
-            <div class="project-card fade-in delay-1" onclick="openModal('')">
-                <div class="project-thumbnail">
-                    <!-- <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Corporate Video"> -->
-                    <div class="play-icon"><i class="fas fa-play"></i></div>
-                </div>
-                <div class="project-info">
-                    <h3>Tech Startup Corporate Video</h3>
-                    <p>Professional corporate presentation with animated infographics and clean editing.</p>
-                    <div class="project-tags">
-                        <span class="tag">Corporate</span>
-                        <span class="tag">Animation</span>
-                        <span class="tag">Infographics</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 6 -->
-            <div class="project-card fade-in delay-2" onclick="openModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
-                <div class="project-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1542744173-05336a8b7d0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Documentary">
-                    <div class="play-icon"><i class="fas fa-play"></i></div>
-                </div>
-                <div class="project-info">
-                    <h3>"Urban Stories" Documentary</h3>
-                    <p>Feature-length documentary exploring city life with authentic storytelling.</p>
-                    <div class="project-tags">
-                        <span class="tag">Documentary</span>
-                        <span class="tag">Interview</span>
-                        <span class="tag">Storytelling</span>
-                    </div>
-                </div>
+            <p id="alert">Portfolio Under Development</p>
+
+            <div class="audio-control" style="margin-top: 20px; display: flex; align-items: center; gap: 10px;">
+                <button id="toggleAudio" style="background: var(--secondary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer;">
+                    <i class="fas fa-volume-mute" id="audioIcon"></i>
+                </button>
+                <span id="audioStatus" style="color: var(--gray);">Sound off</span>
             </div>
         </div>
+        <video id="heroVideo" class="hero-video" autoplay loop muted>
+            <source src="your-video-file.mp4" type="video/mp4">
+        </video>
     </section>
-    <!-- Services Section -->
-    <section id="services">
-        <div class="section-title fade-in">
-            <h2>My Services</h2>
-            <p>How I can help bring your vision to life</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card fade-in delay-1">
-                <div class="service-icon"><i class="fas fa-film"></i></div>
-                <h3>Video Editing</h3>
-                <p>Professional editing for all types of video content including commercials, vlogs, short films, and corporate videos with seamless transitions and pacing.</p>
-            </div>
-            <div class="service-card fade-in delay-2">
-                <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                <h3>Color Grading</h3>
-                <p>Enhancing your footage with cinematic color grading to create mood, consistency, and visual appeal that matches your brand or story.</p>
-            </div>
-            <div class="service-card fade-in delay-3">
-                <div class="service-icon"><i class="fas fa-magic"></i></div>
-                <h3>Motion Graphics</h3>
-                <p>Creating dynamic animated elements, titles, and infographics to make your content more engaging and professional.</p>
-            </div>
-            <div class="service-card fade-in delay-4">
-                <div class="service-icon"><i class="fas fa-volume-up"></i></div>
-                <h3>Sound Design</h3>
-                <p>Professional audio editing, mixing, and sound effects to complement your visuals and enhance the viewer's experience.</p>
-            </div>
-            <div class="service-card fade-in delay-1">
-                <div class="service-icon"><i class="fas fa-video"></i></div>
-                <h3>Video Production</h3>
-                <p>Full-service production from concept development to shooting and post-production for a complete video solution.</p>
-            </div>
-            <div class="service-card fade-in delay-2">
-                <div class="service-icon"><i class="fas fa-photo-video"></i></div>
-                <h3>Social Media Content</h3>
-                <p>Creating optimized video content for Instagram, TikTok, YouTube and other platforms to maximize engagement.</p>
-            </div>
+
+    <section id="recent-work">
+        <h4>Recent Video Work</h4>
+        <div class="video-flex">
+            <iframe width="450" height="250" src="https://www.youtube.com/embed/b4PWuGyIAfo" title="YouTube video player" allowfullscreen></iframe>
+            <iframe width="450" height="250" src="https://www.youtube.com/embed/b7QuyZOdwps" title="YouTube video player" allowfullscreen></iframe>
         </div>
     </section>
 
-
-    <!-- Add this new section before the Contact section -->
-<section id="hire-me" style="padding: 5rem 5%; background-color: rgba(255, 255, 255, 0.03);">
-    <div class="section-title fade-in">
-        <h2>Hire Me</h2>
-        <p>Ready to work together? Choose your preferred method</p>
-    </div>
-    
-    <div class="services-grid" style="max-width: 800px; margin: 0 auto;">
-        <!-- Fiverr Option -->
-        <div class="service-card fade-in delay-1" style="text-align: center; cursor: pointer;" 
-             onclick="window.open('https://www.fiverr.com/users/saymon73', '_blank')">
-            <div class="service-icon"> <img src="https://logos-world.net/wp-content/uploads/2020/11/Fiverr-Emblem.png" alt="Fiverr logo"><i class="fab fa-fiverr"> </i></div>
-            <h3>Hire Me on <strong style="color:rgb(34, 139, 34);"> Fiverr </strong></h3>
-            <p>Browse my services and packages on <p style="color: rgb(34, 139, 34);">Fiverr.</p> Secure payments and order tracking through the platform.</p>
-            <div style="margin-top: 1.5rem;">
-                <a href="https://www.fiverr.com/users/saymon73" target="_blank" 
-                   class="btn btn-primary" style="display: inline-block;">View My Fiverr Profile</a>
-            </div>
+    <section id="projects">
+        <div class="section-title" style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-size: 2.5rem;">Project Showcase</h2>
+            <p style="color: var(--gray);">Web Development & Video Production</p>
         </div>
         
-        <!-- Direct Hire Option -->
-        <div class="service-card fade-in delay-2" style="text-align: center;">
-            <div class="service-icon"><i class="fas fa-envelope"></i></div>
-            <h3>Direct Hire</h3>
-            <p>Contact me directly for custom projects, long-term collaborations, or specialized requests.</p>
-            <div style="margin-top: 1.5rem;">
-                <a href="mailto:naturalistsaimon@gmail.com" class="btn btn-secondary" 
-                   style="display: inline-block;">Email Me Directly</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style> 
-     /* Hire Me Section*/
-#hire-me .service-card {
-    padding: 2.5rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-#hire-me .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(255, 70, 85, 0.2);
-}
-
-#hire-me .btn {
-    margin-top: 1rem;
-}
-
-.fa-fiverr {
-    font-family: 'Font Awesome 5 Brands';
-    font-weight: 400;
-}
-.service-icon img{
-    width: 12rem;
-
-}
-</style>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="section-title fade-in">
-            <h2>Get In Touch</h2>
-            <p>Let's create something amazing together</p>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info fade-in delay-1">
-                <h3>Contact Information</h3>
-                <p>Have a project in mind or want to discuss potential collaboration? Feel free to reach out through any of these channels.</p>
-                
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                        <div class="contact-text">
-                            <h4>Email</h4>
-                            <a href="mailto:naturalistsaimon@gmail.com">naturalistsaimon@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                        <div class="contact-text">
-                            <h4>Phone</h4>
-                            <p>+880 123 456 789</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="contact-text">
-                            <h4>Location</h4>
-                            <p>Chittagong, Bangladesh</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="social-icons" style="margin-top: 2rem;">
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-vimeo-v"></i></a>
-                </div>
-            </div>
+        <div class="projects-grid">
             
-            <form class="contact-form fade-in delay-2">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
+            <div class="project-card">
+                <div class="project-thumbnail">
+                    <i class="fas fa-window-maximize play-icon"></i>
                 </div>
-                <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="project-info">
+                    <h3>Patio Door Repair GTA</h3>
+                    <p>Professional service website built for local repair experts. Features SEO optimization and high-conversion landing pages.</p>
+                    <div class="project-tags">
+                        <span class="tag">Web Design</span>
+                        <span class="tag">SEO</span>
+                        <span class="tag">UI/UX</span>
+                    </div>
+                    <a href="https://patiodoorrepairgta.ca/" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">Visit Site</a>
                 </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required>
+            </div>
+
+            <div class="project-card">
+                <div class="project-thumbnail">
+                    <i class="fas fa-tools play-icon"></i>
                 </div>
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" required></textarea>
+                <div class="project-info">
+                    <h3>Window Crank Repair GTA</h3>
+                    <p>A niche service website focusing on window hardware repair. Optimized for mobile responsiveness and quick load times.</p>
+                    <div class="project-tags">
+                        <span class="tag">WordPress</span>
+                        <span class="tag">Responsive</span>
+                        <span class="tag">Branding</span>
+                    </div>
+                    <a href="https://windowcrankrepairgta.ca/" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">Visit Site</a>
                 </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+            </div>
+
+            <div class="project-card">
+                <div class="project-thumbnail">
+                    <i class="fas fa-door-open play-icon"></i>
+                </div>
+                <div class="project-info">
+                    <h3>Screen Door Repair GTA</h3>
+                    <p>Landing page designed for Google Ads campaigns, focusing on direct customer calls and service inquiries.</p>
+                    <div class="project-tags">
+                        <span class="tag">Marketing</span>
+                        <span class="tag">Web Dev</span>
+                        <span class="tag">GTA</span>
+                    </div>
+                    <a href="https://screendoorrepairgta.ca/" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">Visit Site</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('https://www.youtube.com/embed/bQw6nEnot08')">
+                <div class="project-thumbnail">
+                    <i class="fas fa-play play-icon"></i>
+                </div>
+                <div class="project-info">
+                    <h3>Cinematic Montage</h3>
+                    <p>A high-energy video montage showcasing advanced transition techniques and color grading.</p>
+                    <div class="project-tags">
+                        <span class="tag">Video Editing</span>
+                        <span class="tag">After Effects</span>
+                    </div>
+                    <button class="btn btn-secondary" style="width: 100%;">Watch Video</button>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">SAYMON</div>
-            <ul class="footer-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-vimeo-v"></i></a>
-            </div>
-            <p class="copyright">© 2023 Mohammad Saymon. All Rights Reserved.</p>
+    <div class="customizer">
+        <h3 style="color: white; margin-bottom: 10px; font-size: 14px;">Theme Colors</h3>
+        <div style="display: flex; gap: 10px;">
+            <input type="color" id="primaryColor" value="#0f1923" title="Background Color">
+            <input type="color" id="accentColor" value="#ff4655" title="Accent Color">
         </div>
-    </footer>
+    </div>
 
-    <!-- Video Modal -->
     <div id="videoModal" class="modal">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
         <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
             <div class="video-container">
                 <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
             </div>
@@ -1247,176 +487,51 @@ iframe:hover {
     </div>
 
     <script>
-        // Mobile Navigation
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('toggle');
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('toggle');
-            });
-        });
-        
-        // Video Modal
-        function openModal(videoUrl) {
-            const modal = document.getElementById('videoModal');
-            const video = document.getElementById('modalVideo');
-            video.src = videoUrl;
-            modal.style.display = 'block';
+        // Modal Logic
+        function openModal(url) {
+            document.getElementById('videoModal').style.display = 'block';
+            document.getElementById('modalVideo').src = url;
             document.body.style.overflow = 'hidden';
         }
-        
         function closeModal() {
-            const modal = document.getElementById('videoModal');
-            const video = document.getElementById('modalVideo');
-            video.src = '';
-            modal.style.display = 'none';
+            document.getElementById('videoModal').style.display = 'none';
+            document.getElementById('modalVideo').src = '';
             document.body.style.overflow = 'auto';
         }
-        
-        // Close modal when clicking outside the video
-        window.onclick = function(event) {
-            const modal = document.getElementById('videoModal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-        
-        // Scroll animations
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, {
-            threshold: 0.1
+
+        // Color Customizer
+        const primaryInput = document.getElementById('primaryColor');
+        const accentInput = document.getElementById('accentColor');
+
+        primaryInput.addEventListener('input', () => {
+            document.documentElement.style.setProperty('--primary', primaryInput.value);
         });
-        
-        fadeElements.forEach(element => {
-            observer.observe(element);
+        accentInput.addEventListener('input', () => {
+            document.documentElement.style.setProperty('--secondary', accentInput.value);
         });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+
+        // Audio Toggle
+        const video = document.getElementById('heroVideo');
+        const toggleBtn = document.getElementById('toggleAudio');
+        const audioIcon = document.getElementById('audioIcon');
+
+        toggleBtn.addEventListener('click', () => {
+            video.muted = !video.muted;
+            audioIcon.className = video.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+            document.getElementById('audioStatus').textContent = video.muted ? 'Sound off' : 'Sound on';
+        });
+
+        // Hamburger Menu
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            nav.style.flexDirection = 'column';
+            nav.style.position = 'absolute';
+            nav.style.top = '70px';
+            nav.style.width = '100%';
+            nav.style.background = 'var(--primary)';
         });
     </script>
-
-
-
-
-<!-- extra shit -->
-<div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-    <label for="colorPicker" style="display: block; background: #ff4655; color: white; padding: 8px 12px; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-        Theme Color
-    </label>
-    <input type="color" id="colorPicker" value="#ff4655" style="visibility: hidden; position: absolute;">
-</div>
-
-<script>
-    const colorPicker = document.getElementById('colorPicker');
-    
-    colorPicker.addEventListener('input', function() {
-        const newColor = this.value;
-        
-        // Update CSS variables
-        document.documentElement.style.setProperty('--secondary', newColor);
-        
-        // Update elements with inline secondary color
-        document.querySelectorAll('[style*="ff4655"]').forEach(el => {
-            const style = el.getAttribute('style');
-            el.setAttribute('style', style.replace(/#ff4655|ff4655/g, newColor));
-        });
-    });
-    
-    // Make the label trigger the color picker
-    document.querySelector('label[for="colorPicker"]').addEventListener('click', function() {
-        colorPicker.click();
-    });
-</script>
-<div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: rgba(15, 25, 35, 0.9); padding: 10px; border-radius: 8px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-    <h3 style="color: white; margin-bottom: 10px; font-size: 16px;">Theme Customizer</h3>
-    
-    <div style="margin-bottom: 10px;">
-        <label style="display: block; color: var(--light); margin-bottom: 5px; font-size: 14px;">Primary Color</label>
-        <input type="color" id="primaryColor" value="#0f1923" style="width: 100%; height: 30px;">
-    </div>
-    
-    <div style="margin-bottom: 10px;">
-        <label style="display: block; color: var(--light); margin-bottom: 5px; font-size: 14px;">Accent Color</label>
-        <input type="color" id="accentColor" value="#ff4655" style="width: 100%; height: 30px;">
-    </div>
-    
-    <div>
-        <label style="display: block; color: var(--light); margin-bottom: 5px; font-size: 14px;">Text Color</label>
-        <input type="color" id="textColor" value="#f8f9fa" style="width: 100%; height: 30px;">
-    </div>
-</div>
-
-<script>
-    // Get color pickers
-    const primaryColor = document.getElementById('primaryColor');
-    const accentColor = document.getElementById('accentColor');
-    const textColor = document.getElementById('textColor');
-    
-    // Update colors when changed
-    primaryColor.addEventListener('input', updateColors);
-    accentColor.addEventListener('input', updateColors);
-    textColor.addEventListener('input', updateColors);
-    
-    function updateColors() {
-        document.documentElement.style.setProperty('--primary', primaryColor.value);
-        document.documentElement.style.setProperty('--secondary', accentColor.value);
-        document.documentElement.style.setProperty('--light', textColor.value);
-    }
-</script>
-<!-- Move to Top Button -->
-<div id="moveToTop" style="display: none; position: fixed; bottom: 20px; left: 30px; z-index: 99; width: 50px; height: 50px; background-color: var(--secondary); color: white; border: none; border-radius: 50%; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2); transition: all 0.3s ease; font-size: 30px; text-align: center; line-height: 40px;">
-    ↑
-</div>
-<script>
-    // Move to Top Button
-const moveToTopBtn = document.getElementById('moveToTop');
-
-// Show button when scrolling down
-window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-        moveToTopBtn.style.display = 'block';
-    } else {
-        moveToTopBtn.style.display = 'none';
-    }
-});
-
-// Smooth scroll to top when clicked
-moveToTopBtn.addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-</script>
-<style>
-    #moveToTop:hover {
-    background-color: #e03a4e; /* Slightly darker shade of your accent color */
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-</style>
 </body>
 </html>
